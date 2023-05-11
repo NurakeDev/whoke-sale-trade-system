@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/whole_sale_trade_system_db
+    username: postgres
+    password: 12345
+    driver-class-name: org.postgresql.Driver
+  mvc:
+    path match:
+      matching-strategy: ANT_PATH_MATCHER
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+jwt:
+  public:
+    key: classpath:app.pub
+  private:
+    key: classpath:app.key
+
+  #Use this to befriend spring-boot-starter-actuator & springfox-boot-starter
+server:
+  port: 8081
